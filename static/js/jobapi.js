@@ -27,7 +27,7 @@ function insertJobData(details) {
     for (let i = 0; i < details.length - 65; i++) {
         const element = details[i];
         let data = element;
-        // loader.style.display = "none";
+        loader.style.display = "none";
         const jobDetails =
             `<div class='jobdetails'> <h4>Company Name: ${data.company_name}</h4><h3>Job Title: ${data.title}</h3><p>Location: ${data.location}</p><p>Remote: ${data.remote}</p><a href=${data.url}><button>Apply Here</button></a></div>`
 
