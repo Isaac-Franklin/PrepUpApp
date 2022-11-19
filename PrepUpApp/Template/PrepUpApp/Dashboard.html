@@ -1,0 +1,398 @@
+{%load static%}
+{% load embed_video_tags %}
+{% block content %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Dashboard | PrepUp</title>
+    <link rel="icon" type="image/x-icon" href={% static 'images/prepup1.png' %}>
+    <link rel="stylesheet" href="{% static 'styles/main.css' %}" />
+    <link rel="stylesheet" href="{% static 'styles/dashboard.css' %}" />
+</head>
+
+<body>
+    {% comment %} RESPO NAV SECTION STARTS HERE {% endcomment %}
+    <div>
+        <div onClick={showMenuBar()} class='openmenubtn'>
+            <img src={% static 'images/opennav.png' %} />
+        </div>
+        <div class='respgeneral'>
+            <div onClick={hideMenuBar()} class='closemenubtn'>
+                <img src={% static 'images/closenav.png' %} />
+            </div>
+            <div class='responavtop'>
+                <div class='nameintroresp'>
+                    <p>PrepUp</p>
+                    {% if user.is_authenticated %}
+                    <h3>Hello {{user.username}},</h3>
+                    {% endif %}
+                </div>
+                <div class='respnavsearch'>
+                    <div class='searchBar'>
+                        <form method='GET' action="{% url 'Searchresult' %}">
+                            <input type='text' name='q' placeholder='Search' />
+                        </form>
+                        <img src={% static 'images/search.png' %} alt="search bar" />
+                    </div>
+                    <div class='notificationsettings'>
+
+                        <div>
+                            <div>
+                                <div class='notificationdot'></div>
+                                <img src={% static 'images/notify.png' %} alt="Notification" />
+                            </div>
+                            <img src={% static 'images/settings.png' %} alt="Settings" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <div class='sidebar'>
+                    <div>
+                        <div>
+                            <ul>
+                                <a href='/dashboard'>
+                                    <li class='dashboardbtn'>
+                                        <img src={% static 'images/dashboard.png' %} />
+                                        <p>Dashboard</p>
+                                    </li>
+                                </a>
+                                <a href=/profile/{{user.username}} />
+                                <li class='profilebtn'>
+                                    <img src={% static 'images/profile.png' %} />
+                                    <p>Profile</p>
+                                </li>
+                                </a>
+
+                                <a href='/interviewschedule'>
+                                    <li class='interviewschedulebtn'>
+                                        <img src={% static 'images/play.png' %} />
+                                        <p>Interview Schedule</p>
+                                    </li>
+                                </a>
+                                <a href='/uploadmaterial'>
+                                    <li class='materialsbtn'>
+                                        <img src={% static 'images/materials.png' %} />
+                                        <p>Materials</p>
+                                    </li>
+                                </a>
+                                <a href='/rooms'>
+                                    <li class='roomsbtn'>
+                                        <img src={% static 'images/team.png' %} />
+                                        <p>Rooms</p>
+                                    </li>
+                                </a>
+                                <a href='/interviewresult'>
+                                    <li class='interviewscore'>
+                                        <img src={% static 'images/videocall.png' %} />
+                                        <p>Interview Score</p>
+                                    </li>
+                                </a>
+                            </ul>
+                        </div>
+                        <div>
+                            <ul>
+                                <a href={% url 'Logout' %}>
+                                    <li>
+                                        <img src={% static 'images/exit.png' %} />
+                                        <p>Exit</p>
+                                    </li>
+                                </a>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% comment %} RESPO NAV SECTION ENDS HERE {% endcomment %}
+
+
+    {% comment %} nav bar area starts here {% endcomment %}
+    <div class='nav'>
+        <div class='nav1'>
+            <div class='logoname'>
+                <h2>PrepUp</h2>
+            </div>
+            <div class='welcomenote'>
+                {% if user.is_authenticated %}
+                <h2>Hello {{user.username}},
+                    {% endif %}
+                </h2>
+            </div>
+        </div>
+        <div class='nav2'>
+            <div class='searchBar'>
+                <form method='GET' action="{% url 'Searchresult' %}">
+                    <input type='text' name='q' placeholder='Search' />
+                </form>
+                <img src={% static 'images/search.png' %} alt="search bar" />
+            </div>
+            <div class='notificationsettings'>
+                <div>
+                    <img src={% static 'images/notify.png' %} alt="Notification" />
+                    <img src={% static 'images/settings.png' %} alt="Settings" />
+                </div>
+            </div>
+        </div>
+
+    </div>
+    {% comment %} nav bar area ends here {% endcomment %}
+    {% comment %} SIDEBAR START HERE {% endcomment %}
+    <div class='sideoutter'>
+        <div class='sidebar'>
+            <div>
+                <div>
+                    <ul>
+                        <a href='/dashboard' class='dashboardbtn'>
+                            <li>
+                                <img src={% static 'images/dashboard.png' %} />
+                                <p>Dashboard</p>
+                            </li>
+                        </a>
+                        <a href=/profile/{{user.username}} />
+                        <li class='profilebtn'>
+                            <img src={% static 'images/profile.png' %} />
+                            <p>Profile</p>
+                        </li>
+                        </a>
+                        <a href='/interviewschedule'>
+                            <li class='interviewschedulebtn'>
+                                <img src={% static 'images/play.png' %} />
+                                <p>Interview Schedule</p>
+                            </li>
+                        </a>
+                        <a href='/suggestamaterial'>
+                            <li class='materialsbtn'>
+                                <img src={% static 'images/materials.png' %} />
+                                <p>Materials</p>
+                            </li>
+                        </a>
+                        <a href='/rooms'>
+                            <li class='roomsbtn'>
+                                <img src={% static 'images/team.png' %} />
+                                <p>Rooms</p>
+                            </li>
+                        </a>
+                        <a href='/interviewresult'>
+                            <li class='interviewscore'>
+                                <img src={% static 'images/videocall.png' %} />
+                                <p>Interview Score</p>
+                            </li>
+                        </a>
+                    </ul>
+                </div>
+                <div>
+                    <ul>
+                        <a href={% url 'Logout' %}>
+                            <li>
+                                <img src={% static 'images/exit.png' %} />
+                                <p>Exit</p>
+                            </li>
+                        </a>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    {% comment %} SIDEBAR ENDS HERE {% endcomment %}
+    {% comment %} BODY AREA STARTS HERE {% endcomment %}
+    <div class='bodyarea'>
+        <div>
+            <div class='matchnotice'>
+                <h2>
+                    {% if user.is_authenticated %}
+                    {{user.username}}, You Are Yet To Be Matched For A<br /> Mock Interview</h2>
+                {% endif %}
+
+                <a href={% url 'Uploadmaterial' %}><button>Match Me!</button></a>
+            </div>
+            <div class='dashboardTagsOutter'>
+                <div class='dashboardTagsInner'>
+                    {% for userData in userData %}
+                    {% if userData.years_of_experience >= 2 %}
+                    <div class='dashboardTags'>
+                        {% if userData.profileimage %}
+                        <img id="profilepicture" src="{{ userData.profileimage.url }}" /><br /><br />
+                        {% else %}
+                        <img src={% static 'images/user.png' %} /><br /><br />
+                        {% endif %}
+                        <a>
+                            <p>{{ userData.fullname }}</p>
+                        </a>
+                        <p>{{ userData.profession }}</p>
+                        <p>{{ userData.years_of_experience }} Years Of Experience</p>
+                        <a href=/profile/{{userData.username}} /><button>Visit My Profile</button><a />
+                    </div>
+                    {% comment %} href=/profile/{{user.username}} {% endcomment %}
+                    {%endif%}
+                    {%endfor%}
+                </div>
+            </div>
+        </div>
+        {% comment %} INTERVIEW AREA STARTS HERE {% endcomment %}
+        <div class='mockSessions'>
+            <div>
+                <div class='mockintro'>
+                    <h3>Mock Interview Schedules</h3>
+                    {% comment %} <select>
+                        <option>Today</option>
+                        <option>This Week</option>
+                        <option>Next Week</option>
+                    </select> {% endcomment %}
+                </div>
+
+                <table>
+                    <tr>
+                        <th>Candidate Name</th>
+                        <th>Interviewer</th>
+                        <th>Time</th>
+                        <th>Status</th>
+                    </tr>
+                    {% for interviews in interviews %}
+                    <tr>
+                        <td>{{interviews.user}}</td>
+                        <td>{{interviews.interviewer}}</td>
+                        <td>{{ interviews.Date_and_time }}</td>
+                        {% if interviews.Date_and_time != interviews.created_at %}
+                        <td class='incomepletedmock '>
+                            <p>Oncoming</p>
+                        </td>
+                        {% else %}
+                        <td class='completedMock'>
+                            <p>Completed</p>
+                        </td>
+                        {% endif %}
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+    </div>
+    {% comment %} INTERVIEW AREA ENDS HERE {% endcomment %}
+    {% comment %} BODY AREA ENDS HERE {% endcomment %}
+    {% comment %} WIDGET STARTS HERE {% endcomment %}
+    <div class='widget'>
+        <div class='widgetinner'>
+            <div class='sugestedmaterials'>
+                <h2>Suggested Study Materials</h2>
+                {% for suggestors in suggestors %}
+                <p class='user'>
+                    <a href=/profile/{{ suggestors.user }} />@{{ suggestors.user }}</a> Suggested a Material
+                </p>
+                {% endfor %}
+                <a href='suggestamaterial'><button>See Materials</button></a>
+            </div>
+            <div>
+                <div class='studymaterials'>
+                    <h2>Video Study Materials</h2>
+                    <div>
+                        <p>Courses</p>
+                        <div class='videos'>
+                            <div class='videosinner'>
+                                <p>Video</p>
+                                <iframe width="153" height="130" src="https://www.youtube.com/embed/2X7NB_HFbg4"
+                                    frameBorder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowFullScreen>
+                                </iframe>
+                                <p>Front End Engineers</p>
+
+                            </div>
+                            <div class='videosinner'>
+                                <p>Video</p>
+                                <iframe width="153" height="130" src="https://www.youtube.com/embed/2X7NB_HFbg4"
+                                    frameBorder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowFullScreen>
+                                </iframe>
+                                <p>Back End Engineers</p>
+                            </div>
+                            <div class='videosinner'>
+                                <p>Video</p>
+                                <iframe width="153" height="130" src="https://www.youtube.com/embed/2X7NB_HFbg4"
+                                    frameBorder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowFullScreen>
+                                </iframe>
+                                <p>Data Science</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class='successtories'>
+                    <h2>Our Recent Success Stories</h2>
+                    {% for successstories in successstories %}
+                    <div>
+                        <small>Posted <i>{{successstories.created_at | timesince}} Ago</i> by <a class='profilelink'
+                                href=/profile/{{successstories.user}} />@{{successstories.user}}</a></small>
+                        <div class='successstorysection'>
+                            <img src={% static 'images/user.png' %} />
+                            <p>"{{successstories.testimony}}"</p>
+                        </div>
+                        {% if successstories.Video %}
+                        <a href={{ successstories.Video }} target='_blank'><button>Watch Testimonial Video</button></a>
+                        <div class='line'></div>
+                        {% else %}
+                        <div class='line'></div>
+                        {%endif%}
+                    </div>
+
+                    {% endfor %}
+                    {% comment %} <button>See All Testimonial Videos</button> {% endcomment %}
+                </div>
+                <div class='jobsapi'>
+                    <h2>Available Jobs</h2>
+                    <div class="loader">
+                        <img src={% static 'images/loadings.png' %} />
+                    </div>
+                    {% comment %} <div class='jobdetails'>
+                        <h4>Company Name: IGHub</h4>
+                        <h3>Job Title: Digital Marketer</h3>
+                        <p>Location: Canada</p>
+                        <p>Remote: False</p>
+                        <button>Apply Here</button>
+                    </div>
+                    <div class='jobdetails'>
+                        <h4>Company Name: IGHub</h4>
+                        <h3>Job Title: Digital Marketer</h3>
+                        <p>Location: Canada</p>
+                        <p>Remote: False</p>
+                        <button>Apply Here</button>
+                    </div> {% endcomment %}
+                    {% comment %}
+                    <div>
+                        {
+                        jobsdata.map((current) => {
+                        return (`<div class='jobdetails'>
+                            <h4>Company Name: ${current.company_name}</h4>
+                            <h3>Job Title: ${current.title}</h3>
+                            <p>Location: ${current.location}</p>
+                            <p>Remote: ${current.remote}</p>
+                            <a href=${current.url} target='_blank'><button>Apply Here</button></a>
+                        </div>`, console.log(current.company_name)
+                        )
+                        })
+                        }
+                    </div>{% endcomment %}
+                    <a href='https://cors-anywhere.herokuapp.com/corsdemo' target='_blank'><button>Click Here If Jobs
+                            Aren't Loading</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% comment %} WIDGET ENDS HERE {% endcomment %}
+    <script type="module" src={% static 'js/responav.js' %}></script>
+    <script type="module" src={% static 'js/dashboard.js' %}></script>
+    <script type="module" src={% static 'js/jobapi.js' %}></script>
+</body>
+
+</html>
+
+{% endblock content %}

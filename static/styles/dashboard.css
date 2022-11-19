@@ -1,0 +1,9 @@
+.active {
+    background-color: #FF5F52;
+    color: black;
+    cursor: pointer;
+}
+
+.profilelink {
+    color: white
+}

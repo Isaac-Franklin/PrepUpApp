@@ -1,0 +1,914 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: #161819;
+    /* height: 300vh; */
+
+}
+
+.sidebar a {
+    color: white;
+}
+
+/* MAIN BODY SCROLL BAR EDITS STARTS HERE */
+/* width */
+body::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+body::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+}
+
+/* Handle */
+body::-webkit-scrollbar-thumb {
+    background-color: grey;
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+body::-webkit-scrollbar-thumb:hover {
+    background-color: #be483d;
+}
+
+
+/* MAIN BODY SCROLL BAR EDITS ENDS HERE */
+
+
+/* NAV BAR  STARTSS HERE*/
+.logoname {
+    color: #FF5F52;
+}
+
+.nav {
+    background-color: rgb(22, 24, 25);
+    display: flex;
+    height: 120px;
+    align-items: center;
+    padding: 0px;
+    padding-left: 20px;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    justify-content: space-between;
+    z-index: 20;
+}
+
+.welcomenote {
+    color: white;
+
+}
+
+.nav1,
+.nav2 {
+    display: flex;
+    align-items: center;
+    /* justify-content: space-between; */
+}
+
+.nav1 h2:nth-child(1) {
+    margin-right: 30px;
+    margin-left: 50px;
+}
+
+.nav2 {
+    width: 400px;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.nav2 img:nth-child(0) {
+    width: 25px;
+}
+
+input:focus {
+    border: none;
+}
+
+input {
+    /* background-color: #FF5F52; */
+    width: 150px;
+    height: 40px;
+    align-content: center;
+    padding-left: 35px;
+    padding-right: 5px;
+    border-radius: 15px;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    position: absolute;
+    z-index: 1;
+    margin-right: 20px;
+    background: rgba(255, 255, 255, 0.089);
+    border-radius: 10px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5.1px);
+    -webkit-backdrop-filter: blur(5.1px);
+}
+
+.searchBar {
+    margin-bottom: 15px;
+}
+
+.searchBar img {
+    margin-right: 5px;
+    position: relative;
+    left: 10px;
+    width: 20px;
+    top: 10px;
+    z-index: 5;
+}
+
+.notificationsettings img {
+    margin-left: 10px;
+    width: 30px;
+    padding: 5px;
+    background: rgba(255, 255, 255, 0.089);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5.1px);
+    -webkit-backdrop-filter: blur(5.1px);
+}
+
+/* NAV BAR  ENDS HERE*/
+
+/* SIDE BAR EDITS STARTS HERE */
+.sidebar {
+    /* background-color: red; */
+    background-color: rgb(22, 24, 25);
+    color: white;
+    width: 220px;
+    height: 87vh;
+    margin-right: 0px;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+}
+
+.sidebar img {
+    width: 20px;
+    margin-right: 10px;
+}
+
+.sidebar ul {
+    margin-top: 40px;
+    /* margin-left: 20px; */
+}
+
+.sidebar ul li:hover {
+    background-color: #FF5F52;
+    color: black;
+    cursor: pointer;
+}
+
+.active {
+    background-color: #FF5F52;
+    color: black;
+    cursor: pointer;
+}
+
+.sidebar ul li {
+    list-style: none;
+    align-items: center;
+    display: flex;
+    margin-bottom: 10px;
+    padding: 5px 5px;
+    border-radius: 10px;
+    font-size: 0.9rem;
+}
+
+.sidebar ul li p {
+    margin-top: 10px;
+    font-weight: 500;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+}
+
+/* SIDE BAR EDITS ENDS HERE */
+/* Widgets EDITS STARTS HERE */
+
+
+.widget {
+    padding-top: 40px;
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+    background-color: rgb(22, 24, 25);
+    color: white;
+    height: 87vh;
+    /* overflow: hidden; */
+    width: 330px;
+    text-align: left;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+
+
+.sugestedmaterials {
+    margin-bottom: 20px;
+    height: 170px;
+    overflow-y: scroll;
+    /* overflow-x: hidden; */
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.089);
+    border-radius: 10px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5.1px);
+    -webkit-backdrop-filter: blur(5.1px);
+    /* border: 1px solid rgba(255, 255, 255, 0.3); */
+}
+
+
+/* SUGGESTED MATERIALS SCROLL BAR EDITS STARTS HERE */
+/* width */
+.sugestedmaterials::-webkit-scrollbar {
+    width: 10px;
+    padding-right: 5px;
+    height: 2px;
+}
+
+/* Track */
+.sugestedmaterials::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+}
+
+/* Handle */
+.sugestedmaterials::-webkit-scrollbar-thumb {
+    background-color: black;
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+.sugestedmaterials::-webkit-scrollbar-thumb:hover {
+    background-color: #be483d;
+}
+
+/* SUGGESTED MATERIALS SCROLL BAR EDITS ENDS HERE */
+
+.sugestedmaterials h2 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.sugestedmaterials a {
+    color: white;
+    margin-right: 5px;
+}
+
+.sugestedmaterials button {
+    background-color: #FF5F52;
+    padding: 10px;
+    color: white;
+    border-radius: 10px;
+    border: none;
+    margin: 10px 1px;
+}
+
+.sugestedmaterials button:hover {
+    color: black;
+    cursor: pointer;
+}
+
+.widget h2 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+
+.widget img {
+    width: 30px;
+    margin-right: 5px;
+}
+
+.user {
+    display: flex;
+    align-items: center;
+}
+
+.studymaterials {
+    padding: 10px;
+    margin-bottom: 20px;
+    background: rgba(255, 255, 255, 0.089);
+    border-radius: 10px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5.1px);
+    -webkit-backdrop-filter: blur(5.1px);
+}
+
+
+.widgetinner {
+    overflow-y: scroll;
+    height: 100%;
+    padding-bottom: 50px;
+}
+
+
+
+/* widgetinner SCROLLBAR EDITS STARTS HERE */
+
+/* width */
+.widgetinner::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+.widgetinner::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+}
+
+/* Handle */
+.widgetinner::-webkit-scrollbar-thumb {
+    background-color: #FF5F52;
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+.widgetinner::-webkit-scrollbar-thumb:hover {
+    background-color: #be483d;
+}
+
+/* WIDGET SCROLLBAR EDITS ENDS HERE */
+
+.videos {
+    display: flex;
+    margin: 10px 0px;
+    overflow-x: scroll;
+}
+
+
+/* VIDEO SCROLL BAR EDITS STARTS HERE */
+
+/* width */
+.videos::-webkit-scrollbar {
+    height: 10px;
+}
+
+/* Track */
+.videos::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+}
+
+/* Handle */
+.videos::-webkit-scrollbar-thumb {
+    background-color: #FF5F52;
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+.videos::-webkit-scrollbar-thumb:hover {
+    background-color: #be483d;
+}
+
+/* VIDEO SCROLL BAR EDITS ENDS HERE */
+
+.videosinner {
+    margin-right: 10px;
+    border: white 1px solid;
+    border-radius: 10px;
+    margin-bottom: 5px;
+    padding: 5px;
+}
+
+
+
+.successtories {
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.089);
+    border-radius: 10px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5.1px);
+    -webkit-backdrop-filter: blur(5.1px);
+    margin-bottom: 20px;
+}
+
+.successtories button {
+    background-color: #FF5F52;
+    padding: 10px;
+    color: white;
+    border-radius: 10px;
+    border: none;
+    margin: 10px 1px;
+
+}
+
+.successtories button:hover {
+    color: black;
+    cursor: pointer;
+}
+
+.successstorysection img {
+    margin-right: 5px;
+    width: 40px;
+}
+
+.successstorysection {
+    display: flex;
+    margin: 5px 2px;
+    align-items: center;
+}
+
+.notificationdot {
+    width: 4px;
+    height: 4px;
+    background-color: #FF5F52;
+}
+
+.line {
+    width: 100%;
+    height: 2px;
+    background-color: black;
+    border-radius: 30px;
+    margin: 10px auto;
+
+}
+
+.jobsapi {
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.089);
+    border-radius: 10px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5.1px);
+    -webkit-backdrop-filter: blur(5.1px);
+    margin-bottom: 20px;
+}
+
+.jobdetails {
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.089);
+    border-radius: 10px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5.1px);
+    -webkit-backdrop-filter: blur(5.1px);
+    margin-bottom: 20px;
+}
+
+.jobdetails button {
+    background-color: #FF5F52;
+    padding: 10px;
+    color: white;
+    border-radius: 10px;
+    border: none;
+    margin: 10px 1px;
+
+}
+
+.loader img {
+    height: 4.5rem;
+    width: 4.5rem;
+    margin-left: 100px;
+    transform-origin: 44% 50%;
+    animation: rotate 1.5s infinite linear;
+    z-index: 12;
+}
+
+.jobdetails button:hover {
+    color: black;
+    cursor: pointer;
+}
+
+.jobsapi button {
+    background-color: #FF5F52;
+    padding: 10px;
+    color: white;
+    border-radius: 10px;
+    border: none;
+    margin: 10px 1px;
+
+}
+
+.jobsapi button:hover {
+    color: black;
+    cursor: pointer;
+}
+
+/* Widgets EDITS ENDS HERE */
+
+/* BODY AREA EDITS STARTS HERE */
+.bodyarea {
+    background-color: black;
+    width: 59%;
+    margin: auto;
+    margin-left: 16%;
+    margin-top: 70px;
+    /* height: 100vh; */
+    padding: 10px;
+    border-radius: 10px;
+    z-index: 10;
+}
+
+.matchnotice {
+    padding: 30px 20px;
+    background: rgba(255, 255, 255, 0.089);
+    border-radius: 10px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5.1px);
+    -webkit-backdrop-filter: blur(5.1px);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: 10px auto;
+    /* margin-left: 19%;
+    margin-top: 100px; */
+}
+
+.dashboardTags img {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border: 2px solid #FF5F52;
+    border-radius: 200px;
+}
+
+/* #profilepicture img {
+    width: 40px;
+} */
+
+.matchnotice button {
+    background-color: #FF5F52;
+    padding: 10px;
+    color: white;
+    border-radius: 10px;
+    border: none;
+    margin: 10px 1px;
+
+}
+
+.matchnotice button:hover {
+    color: black;
+    cursor: pointer;
+}
+
+
+.matchnotice h2 {
+    font-size: 1.2rem;
+}
+
+/* OUR TOP TALENTS LIST ON DASHBORD EDITS STARTS HERE */
+.dashboardTags {
+    width: 220px;
+    padding: 30px 20px;
+    background: rgba(255, 255, 255, 0.089);
+    border-radius: 10px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5.1px);
+    -webkit-backdrop-filter: blur(5.1px);
+    color: white;
+    text-align: center;
+    margin-right: 20px;
+}
+
+
+.dashboardTags h2,
+p {
+    margin-bottom: 10px;
+}
+
+
+.dashboardTags button {
+    background-color: #FF5F52;
+    padding: 9px 15px;
+    color: white;
+    border-radius: 10px;
+    border: none;
+    margin: 10px 1px;
+}
+
+
+.dashboardTags button:hover {
+    color: black;
+    cursor: pointer;
+}
+
+.dashboardTagsOutter {
+    width: 100%;
+    /* background-color: red; */
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+}
+
+.dashboardTagsInner {
+    display: flex;
+    overflow-x: hidden;
+    width: 160%;
+}
+
+/* DASHBOARD TALENTS SCROLLBAR EDITS STARTS HERE */
+
+/* width */
+.dashboardTagsOutter::-webkit-scrollbar {
+    height: 10px;
+}
+
+/* Track */
+.dashboardTagsOutter::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+}
+
+/* Handle */
+.dashboardTagsOutter::-webkit-scrollbar-thumb {
+    background-color: #FF5F52;
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+.dashboardTagsOutter::-webkit-scrollbar-thumb:hover {
+    background-color: #be483d;
+}
+
+/* DASHBOARD TALENTS SCROLLBAR EDITS ENDS HERE */
+
+/* OUR TOP TALENTS LIST ON DASHBORD EDITS ENDS HERE */
+
+/* TABLE EDITS STARTS HERE */
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    color: white;
+
+}
+
+td,
+th {
+    text-align: left;
+    padding: 10px;
+    /* margin-bottom: 30px; */
+}
+
+th {
+    margin-bottom: 30px;
+}
+
+
+td {
+    /* background-color: white; */
+    border-bottom: 1px solid rgb(75, 75, 75);
+}
+
+tr:hover {
+    /* background-color: #be483d; */
+    background-color: rgba(255, 255, 255, 0.089);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5.1px);
+    -webkit-backdrop-filter: blur(5.1px);
+}
+
+tr:nth-child(1):hover {
+    background-color: transparent;
+}
+
+.incomepletedmock p {
+    background-color: #cddc26;
+    color: black;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.completedMock p {
+    background-color: rgba(0, 128, 0, 0.487);
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.procesingmock p {
+    background-color: rgba(255, 255, 0, 0.168);
+    padding: 5px;
+    border-radius: 5px;
+}
+
+/* tr:nth-child(even) {
+    background-color: #be483d;
+  } */
+
+
+/* TABLE EDITS ENDS HERE */
+
+.mockSessions {
+    margin: 20px 0px;
+    color: white;
+    padding: 30px 20px;
+    background: rgba(255, 255, 255, 0.089);
+    border-radius: 10px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5.1px);
+    -webkit-backdrop-filter: blur(5.1px);
+}
+
+.mockSessions h3 {
+    margin-bottom: 20px;
+}
+
+
+.mockintro {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mockintro select {
+    margin-bottom: 10px;
+    color: white;
+    padding: 2px 10px;
+    background: black;
+    border-radius: 5px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5.1px);
+    -webkit-backdrop-filter: blur(5.1px);
+}
+
+/* BODY AREA EDITS ENDS HERE */
+
+/* DESKTOP RESPONSIVENESS  EDITS STARTS HERE */
+.respgeneral {
+    display: none;
+}
+
+@media only screen and (max-width: 1230px) {
+    .widget {
+        display: none;
+    }
+
+    .bodyarea {
+        background-color: black;
+        width: 76%;
+        margin: auto;
+        margin-left: 18%;
+        margin-top: 100px;
+        /* height: 100vh; */
+        padding: 10px;
+        border-radius: 10px;
+        z-index: 10;
+    }
+
+    .sidebar {
+        background-color: rgb(22, 24, 25);
+        color: white;
+        width: 140px;
+        height: 87vh;
+        position: fixed;
+        bottom: 0;
+    }
+
+    .sidebar ul {
+        margin-left: 10px;
+        margin-top: 40px;
+    }
+
+}
+
+@media only screen and (max-width: 730px) {
+    .nav {
+        background-color: rgb(22, 24, 25);
+        display: none;
+    }
+
+    .bodyarea {
+        background-color: black;
+        width: 90%;
+        margin: auto;
+        margin-left: 5%;
+        margin-top: 90px;
+        /* height: 100vh; */
+        padding: 10px;
+        border-radius: 10px;
+        z-index: 10;
+    }
+
+    .sideoutter .sidebar {
+        background-color: rgb(22, 24, 25);
+        color: white;
+        width: 140px;
+        height: 87vh;
+        position: fixed;
+        bottom: 0;
+        display: none;
+    }
+
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+        color: white;
+        overflow-x: hidden;
+    }
+
+
+    .mockSessions {
+        overflow-x: scroll;
+        margin: 20px 0px;
+        color: white;
+        padding: 30px 20px;
+        background: rgba(255, 255, 255, 0.089);
+        border-radius: 10px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(5.1px);
+        -webkit-backdrop-filter: blur(5.1px);
+    }
+
+    .dashboardTagsOutter {
+        width: 100%;
+        /* background-color: red; */
+        overflow-x: scroll;
+        scroll-behavior: smooth;
+    }
+
+    .dashboardTagsInner {
+        display: flex;
+        overflow-x: hidden;
+        width: 360%;
+    }
+
+
+    /* RESPONSIVENESS EDITS STARTS HERE */
+    .nameintroresp {
+        z-index: 10;
+        color: white;
+    }
+
+    .openmenubtn img {
+        /* display: none; */
+        position: fixed;
+        right: 0;
+        z-index: 10;
+        top: 0;
+        padding: 5px;
+        cursor: pointer;
+        margin: 15px;
+        background: rgba(255, 255, 255, 0.089);
+        border-radius: 50px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(5.1px);
+        -webkit-backdrop-filter: blur(5.1px);
+    }
+
+    .closemenubtn img {
+        position: absolute;
+        right: 0;
+        padding: 5px;
+        cursor: pointer;
+        margin: 5px;
+        background: rgba(255, 255, 255, 0.089);
+        border-radius: 50px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(5.1px);
+        -webkit-backdrop-filter: blur(5.1px);
+    }
+
+    .nameintroresp p {
+        font-size: 1.2rem;
+        color: #be483d;
+        font-weight: bold;
+    }
+
+    .nameintroresp h3 {
+        margin-bottom: 10px;
+    }
+
+    .respgeneral {
+        position: fixed;
+        top: 0px;
+        width: 100vw;
+        z-index: 20;
+        align-items: center;
+        text-align: center;
+        background-color: #161819;
+        height: 120px;
+        padding-top: 8px;
+        display: none;
+    }
+
+    .responavtop {
+        z-index: 25;
+    }
+
+    .respnavsearch {
+        display: flex;
+        justify-content: space-around;
+
+    }
+
+    .respgeneral .sidebar {
+        /* z-index:  */
+        width: 220px;
+        padding-right: 10px;
+    }
+
+    /* RESPONSIVENESS EDITS ENDS HERE */
+}
+
+/* DESKTOP RESPONSIVENESS  EDITS ENDS HERE */

@@ -1,0 +1,54 @@
+{% include 'General.html' %} 
+{%load static%}
+{% load embed_video_tags %}
+{% block content %}
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Profile | PrepUp</title>
+		<link rel="stylesheet" href="{% static 'styles/profile.css' %}" />
+	</head>
+    <body>
+        <div class="profilebodyarea">
+            <p>{{allusers.username}}'s Profile</p>
+            <h2>User's Information</h2>
+
+            <div class='profileimage'>
+                <div>
+                    <img src = "{{allusers.profileimage.url}}"/>
+                </div>
+                <div class='details'>
+                    <h2>Full Name : {{allusers.fullname}}</h2>
+                    <h2>Username : {{allusers.username}}</h2>
+                    <h2>Portfolio : <a href={{allusers.portfolio}} >Visit my portfolio</a></h2>
+                    <h2>Email Address : {{allusers.email}}</h2>
+                    <h2>Years Of Experience : {{allusers.years_of_experience}}</h2>
+                    <h2>You Joined Us On : {{allusers.created_at}}</h2>
+                </div>
+            </div>
+                {% if allusers.username == request.user.username %}
+                <button>Edit Profile</button>
+                <a href={% url 'Uploadmaterial' %}><button>Recommend Study Material(s)</button></a>
+                <a href={% url 'Successstory' %}><button>Submit A Testimonial</button></a>
+                {% endif %}
+                {% comment %} <div>
+                    <h2>Suggested The Following Materials</h2>
+                    {% for suggestors in suggestors %}
+                    {% if suggestors.user == allusers.username %}
+                    <p>check<p>
+                    <div>
+                        <p>{{allusers.fullname}}</p>
+                        {% else %}
+                    </div>
+                    {% endif %}
+                    {% endfor %}
+                </div> {% endcomment %}
+        </div>
+        <script type="module" src= {% static 'js/responav.js' %} ></script>
+
+    </body>
+</html>
+    {% endblock content %}
+    

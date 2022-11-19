@@ -1,0 +1,21 @@
+{% include 'General.html' %} 
+{%load static%}
+{% load embed_video_tags %}
+{% block content %}
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Interview Schedule Page | PrepUp</title>
+		<link rel="stylesheet" href="{% static 'styles/interviewresultpage.css' %}" />
+		{% comment %} <link rel="stylesheet" href="{% static 'styles/main.css' %}" /> {% endcomment %}
+	</head>
+	<body>
+        <div class='interviewresultbody'>
+            <h1>Your <span>Mock Interview Result</span> Will Be Shown Here When Its Ready</h1>
+        </div>
+        <script type="module" src= {% static 'js/responav.js' %} ></script>
+    </body>
+</html>
+{% endblock content %}

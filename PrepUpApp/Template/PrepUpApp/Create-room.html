@@ -1,0 +1,30 @@
+{% include 'General.html' %} 
+{%load static%}
+{% load embed_video_tags %}
+{% block content %}
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Create A Room Page | PrepUp</title>
+		<link rel="stylesheet" href="{% static 'styles/createroom.css' %}" />
+		{% comment %} <link rel="stylesheet" href="{% static 'styles/main.css' %}" /> {% endcomment %}
+	</head>
+	<body>
+        <div class='createroomsbodyarea'>
+            <h1>Create A Room</h1>
+            <div>
+                <form method="POST">
+                    {% csrf_token %}
+                    <label>Give Your Room A Topic</label><br/>
+                    <input type = 'text' name='topic' required placeholder = 'eg. Basics Of Job Hunting'/><br/><br/><br/>
+                    <label>Give Your Room A Desciption</label><br/>
+                    <textarea type = 'text' name='description' required placeholder = "eg. In Here We'll Be Discussing The Basics Of Job Hunting"></textarea><br/><br/>
+                    <button type='submit'>Start Room</button>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
+{% endblock content %}

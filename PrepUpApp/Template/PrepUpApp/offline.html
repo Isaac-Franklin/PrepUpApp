@@ -1,0 +1,25 @@
+{%load static%}
+{% block content %}
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Offline | PrepUp</title>
+		<link rel="stylesheet" href="{% static 'styles/Useronboard.css' %}" />
+	</head>
+	<body>
+        <div class='loginpage'>
+            <div class='loginform'>
+                <div class='formproper'>
+                    <h1>Sorry, Your Are Currently Offline</h1>
+                    <p><a href='/login'>Kindly Login Online To Access Continue</a></p>
+                </div>
+                <div class='loginsideimage'>
+                    <img src={% static 'images/prepuplogin.png'%} />
+                </div>
+            </div>
+        </div> 
+    </body>
+    </html>
+    {% endblock content %}

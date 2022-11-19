@@ -1,0 +1,29 @@
+{% include 'General.html' %} 
+{%load static%}
+{% load embed_video_tags %}
+{% block content %}
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title> Delete {{rooms.topic}} | PrepUp</title>
+		<link rel="stylesheet" href="{% static 'styles/insideroom.css' %}" />
+		{% comment %} <link rel="stylesheet" href="{% static 'styles/main.css' %}" /> {% endcomment %}
+	</head>
+	<body>
+        <div class= 'insidebodyarea'>
+            <div>
+                <form method="POST">
+                    {% csrf_token %}
+                    <h1>Are you you want to delete the room  <span>{{thisroom.topic}}?</span></h1><br/>
+                    <button type = 'submit' value ='confirm'>Confirm</button>
+                    <a href='{{request.META.HTTP_REFERER}}'><button>Return</button></a>
+                </form>
+            </div>
+        </div>
+        <script type="module" src= {% static 'js/responav.js' %} ></script>
+
+    </body>
+</html>
+{% endblock content %}

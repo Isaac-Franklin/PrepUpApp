@@ -1,0 +1,84 @@
+{% extends 'general.html' %}
+
+{% load static %}
+
+{% block content %}
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Upload A Study Material | PrepUp</title>
+		{% comment %} <link rel="stylesheet" href="{% static 'styles/main.css' %}" /> {% endcomment %}
+		<link rel="stylesheet" href="{% static 'styles/uploadmaterial.css' %}" />
+	</head>
+	<body>
+
+        <div class='suggestmatebodyarea'> 
+          <div class='instruction'>
+            <p>KINDLY UPLOAD ANY MATERIAL YOU INTEND TO SUGGEST TO A CLOUD MEMORY [EG: GOOGLE DRIVE] AND POST THE LINK WHILE FILLING THE FORM BELOW</p>
+          </div>
+            <form method="POST">
+                {% csrf_token %}
+                <div>
+                  <div class="forminner">
+                    <Label>Enter The Material Title:</Label><br/>
+                    <input type="text" name="title" placeholder='Eg: PreUp Intro Ebook'><br/><br/>
+                  </div>
+                  <div class="forminner">
+                    <Label>Enter A Detailed Description Of This Material:</Label><br/>
+                    <textarea type="text" name="description" placeholder='Eg: After the study of this material, you will understand fully the concept of PrepUp'></textarea><br/><br/>
+                  </div>
+                  <div class="forminner">
+                    <Label>Is This Material A Video, an Ebook, a Blog Post?</Label><br/>
+                    <select name = 'Material_type' placeholder='Eg: PreUp Intro Ebook'>
+                      <option value='A Blog Post'>Select An Option</option>
+                      <option value = 'A Video'>A Video</option>
+                      <option value = 'An Ebook'>An Ebook</option>
+                      <option value = 'ABlog Post'>A Blog Post</option>
+                    </select><br/><br/>
+                  </div>
+                  {% comment %} <input type="file" title='Who Is This Material Meant For(what niche)?' placeholder="Eg: Upload File From Device's Local Memory" name="suggestedfile"><br/><br/> {% endcomment %}
+                </div>
+                <div>
+                  
+                  <div class="forminner">
+                    <Label>Who Is This Material Meant For?:</Label><br/>
+                    <select name ='Meant_for'>
+                      <option value='Everyone'>Click To Submit</option>
+                      <option value='digitalmarketers'>Digital Marketers</option>
+                      <option value 'Fullstack Developers'>Full Stack Developer</option>
+                      <option value='developer relations'>Developers Relationist</option>
+                      <option value='business consultants'>Business Consultants</option>
+                      <option value='human right managers'>Human Resourse Managers</option>
+                      <option value='college students'>College Students</option>
+                      <option value='children '>Children</option>
+                      <option value ='everyone'>Everyone</option>
+                    </select>
+                  </div>
+                  <div class="forminner">
+                      <Label>List The Benefits Of Using This Material:</Label><br/>
+                      <textarea type="text" class='benefitslist' name="benefits" placeholder='Eg: 1. Lorem Ipsum... '></textarea><br/><br/>
+                  </div>
+                 {% comment %} <div class="forminner">
+                    <Label>Upload Material[Size must be less than 8MB]:</Label><br/>
+                    <input type="file" title='Who Is This Material Meant For(what niche)?' placeholder="Eg: Upload File From Device's Local Memory" name="suggestedfile"><br/><br/>
+                 </div> {% endcomment %}
+                 <div class="forminner">
+                    <Label>Enter URL To External Youtube Video Material:</Label><br/>
+                    <input type="url" name="materialLink" placeholder='Eg: https://youtu.be/oIymZFmAisI' title='Add link to an external video here'><br/><br/>
+                 </div>
+                </div>
+                <button type="submit">Submit</button>
+              </form>
+            
+              {% if Upload_material %}
+                <p>File uploaded at: <a href="{{ Upload_material }}">{{ Upload_material }}</a></p>
+              {% endif %}
+              <a href="{% url 'Dashboard' %}"><button>Return to Dashboard</button></a>
+              {% comment %} <a href=/profile/{{user.username}}/ ><button>Return to Profile</button></a> {% endcomment %}
+        </div>
+        <script type="module" src= {% static 'js/responav.js' %} ></script>
+</body>
+</html>
+{% endblock %}

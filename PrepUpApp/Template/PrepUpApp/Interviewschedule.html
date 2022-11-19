@@ -1,0 +1,84 @@
+{% include 'General.html' %} 
+{%load static%}
+{% load embed_video_tags %}
+{% block content %}
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Interview Schedule Page | PrepUp</title>
+		<link rel="stylesheet" href="{% static 'styles/interviewschedulepage.css' %}" />
+		{% comment %} <link rel="stylesheet" href="{% static 'styles/main.css' %}" /> {% endcomment %}
+	</head>
+	<body>
+        <div class="interviewschedulebodyarea">
+            <p>Interview Schedule Page</p>
+            <div class='displaySelectedInterviewer'>
+                
+                {% comment %} {% if user.is_authenticated %}
+                <h2>Hello {{user.username}},
+                {% endif %} {% endcomment %}
+                <div>
+                    {% comment %} {% if user.is_authenticated %}
+                    <div class="getuser">Hello <i>{{user.username}}, </i></div>
+                    {% endif %} {% endcomment %}
+                    {%for userData in userData%}
+                        {% if userData.years_of_experience > 2 %}
+                        <div class='suggestedinterviewers'>
+                            <h1>{{userData.fullname}}</h1>
+                        </div>
+                        {% endif %}
+                    {% endfor %}
+                    <div class="numberofcandidate">
+                        {% if user.is_authenticated %} <h1>{{user.username}}, We Have <a><strong></strong></a> Possible Interviewers Ready For You.</h1>{% endif %}
+                        <h2>Kindly Click The Button Below To Generate One Now:</h2>
+                        <button class='activateselection' >Generate Interviewer</button>
+                    </div>
+                </div>
+                <div class='selectedinterviewer'>
+                    <div class="line"></div>
+                    <div class="loader">
+                        <img src={% static 'images/loader3.png'%}  />
+                    </div>
+                    <div class= "selectedinterviewerproper">
+                        <h2>
+                            Congratulations, you have been matched to be interviewed by<a><strong></strong></a>
+                            <form method ='POST'>
+                                {% csrf_token %}
+                                <input type='text' class='inputsec' name='name' placeholder= "Copy And Paste Interviewer's Name Here"/><br/>
+                                <button type='submit' class='accept'>SUBMIT AND SCHEDULE!</button>
+                            </form>
+                            {% comment %} <a href= /profile/ ><p>Click To See Profile</p></a> {% endcomment %}
+                        </h2>
+                        {% comment %} <div class='showspecificuser'>
+                            {% for userData in userData %}
+                            <h1>  {{userData.username}} </h1>
+                            <p></p>
+                            {% endfor %}
+                        </div> {% endcomment %}
+                       
+                        <button class='refresh'>REFRESH!</button>
+                    </div>
+                    {% comment %} a href=/profile/{{user.username}} {% endcomment %}
+
+                    
+                </div>
+            </div>
+            
+            <div class='acceptDisplay'>
+                <div class='acceptDisplayinner'>
+                    <p>You Accepted, Great!</p>
+                    <h2>
+                        Now Your Interviewer Will Be Informed Immediately, And We Will Schedule A Mock Interview. 
+                    </h2> 
+                </div>
+                
+            </div>
+        </div>
+            <script type="module" src= {% static 'js/interviewschedule.js' %} ></script>
+            <script type="module" src= {% static 'js/responav.js' %} ></script>
+        
+    </body>
+    </html>
+{% endblock content %}

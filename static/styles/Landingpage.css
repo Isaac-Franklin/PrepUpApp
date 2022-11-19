@@ -1,0 +1,427 @@
+* {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+}
+
+body {
+    background-color: whitesmoke;
+}
+
+
+nav ul li {
+    list-style: none;
+    margin-left: 30px;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+nav ul li:hover {
+    cursor: pointer;
+    color: #FF5F52;
+}
+
+nav ul {
+    display: flex;
+}
+
+nav img {
+    width: 50px;
+}
+
+nav {
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+    height: 100px;
+    background-color: white;
+    /* background-color: rgb(22, 24, 25); */
+    color: black;
+    font-size: 1.2rem;
+    font-weight: bold;
+    position: relative;
+}
+
+.hamburger {
+    display: none;
+
+}
+
+.hamburger2 {
+    display: none;
+}
+
+button {
+    background-color: #FF5F52;
+    padding: 9px 15px;
+    color: white;
+    border-radius: 10px;
+    border: none;
+    margin: 10px 1px;
+    transition: 0.3s ease-in-out;
+}
+
+
+button:hover {
+    color: black;
+    cursor: pointer;
+    /* background-color: transparent;
+    border: 2px solid #FF5F52;
+    transition: 0.3s ease-in-out; */
+}
+
+.navbtns {
+    /* background-color: red; */
+    width: 200px;
+    display: flex;
+    justify-content: space-around;
+}
+
+/* HERO SECTION STARTS HERE*/
+.hero {
+    background-image: url("/static/images/connect.png");
+    height: 90vh;
+    /* margin-bottom: 50px; */
+    /* background barker effect from here */
+    background-color: rgb(41, 41, 41);
+    background-blend-mode: multiply;
+    background-attachment: fixed;
+
+
+}
+
+.heroinner {
+    color: white;
+    text-align: center;
+    width: 70%;
+    padding-top: 5%;
+    margin: auto;
+}
+
+.heroinner h3 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #FF5F52;
+}
+
+.heroinner h1 {
+    font-size: 4rem;
+    margin-bottom: 30px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+
+.heroinner button {
+    height: 50px;
+    font-size: 1.3rem;
+    width: 340px;
+    font-weight: bold;
+    margin: auto;
+}
+
+/* HERO SECTION ENDS HERE*/
+
+/* SECTION TWO STARTS HERE */
+.section2 {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: white;
+    color: black;
+    height: 100vh;
+
+}
+
+.section2 h2 {
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 2rem;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-transform: uppercase;
+    color: #FF5F52;
+}
+
+span {
+    color: #FF5F52;
+}
+
+.section2inner {
+    width: 90%;
+    margin: auto;
+    align-items: center;
+    margin-bottom: 50px;
+    justify-content: space-between;
+
+}
+
+.section2inner h1 {
+    font-size: 1.2rem;
+    line-height: 40px;
+}
+
+.probstmt {
+    text-align: center;
+}
+
+
+
+/* SECTION TWO ENDS HERE */
+
+.listofreasons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px 0px;
+    background-color: #FF5F52;
+    padding: 0px 50px;
+    margin-bottom: 50px;
+}
+
+.listofreasonsb {
+    width: 40%;
+    margin: 50px;
+
+}
+
+.listofreasonsb li {
+    line-height: 30px;
+    font-size: 1.2rem;
+}
+
+.listofreasonsb h1 {
+    font-size: 1.5rem;
+}
+
+.solution {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.solution h1 {
+    font-size: 10rem;
+    width: 95vw;
+    margin: auto;
+    background-color: black;
+    color: #FF5F52;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    padding: 10px 0px;
+}
+
+.soutioninner {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.soutioninnerb {
+    width: 50%;
+
+}
+
+
+.soutioninnerb ul li {
+    line-height: 30px;
+}
+
+.getstartedbtn {
+    text-align: center;
+}
+
+.getstartedbtn button {
+    width: 70%;
+    /* height: 100px; */
+    font-size: 2rem;
+    margin: 30px 0px;
+}
+
+.goal {
+    text-align: center;
+    width: 80%;
+    margin-top: 30px;
+    margin: auto;
+    background-color: white;
+    box-shadow: 5px 5px 20px #888888;
+    padding: 30px;
+}
+
+.goal h1 {
+    margin: 30px;
+}
+
+.goal h2 {
+    font-size: 1.7rem;
+}
+
+.footer {
+    height: 70px;
+    background-color: white;
+    box-shadow: 5px 5px 20px #888888;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.responsivenav {
+    display: none;
+}
+
+@media only screen and (max-width: 1030px) {
+
+    .responsivenav {
+        display: none;
+        background-color: white;
+        height: 50vh;
+        width: 60vw;
+        position: fixed;
+        top: 70px;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .responsivenav ul a li {
+        list-style: none;
+    }
+
+    nav ul {
+        display: none;
+    }
+
+    nav img {
+        width: 50px;
+    }
+
+    nav {
+        height: 70px;
+        position: fixed;
+        width: 100%;
+    }
+
+    .navbtns button {
+        display: none;
+    }
+
+
+    .heroinner h3 {
+        font-size: 1rem;
+        margin-bottom: 20px;
+        color: #FF5F52;
+    }
+
+    .heroinner h1 {
+        font-size: 2rem;
+        margin-bottom: 30px;
+    }
+
+
+    .heroinner {
+        color: white;
+        text-align: center;
+        width: 70%;
+        padding-top: 35%;
+        margin: auto;
+    }
+
+    .heroinner button {
+        display: block;
+    }
+
+    .heroinner button {
+        height: 50px;
+        font-size: 1.3rem;
+        width: 300px;
+        font-weight: bold;
+    }
+
+    .section2inner h1 {
+        font-size: 1rem;
+        line-height: 30px;
+    }
+
+
+    .probstmt {
+        text-align: left;
+    }
+
+    .listofreasons {
+        display: inline;
+        /* align-items: center; */
+        justify-content: space-between;
+        padding: 50px 0px;
+        background-color: #FF5F52;
+        padding: 0px 50px;
+        margin-bottom: 50px;
+    }
+
+    .listofreasons img {
+        width: 90vw;
+        margin-bottom: 40px;
+    }
+
+    .listofreasonsb {
+        margin-top: 30px;
+        width: 90%;
+        margin: auto;
+
+    }
+
+    .solution {
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+
+    .solution h1 {
+        font-size: 4rem;
+        width: 95vw;
+    }
+
+    .soutioninner {
+        display: inline;
+        align-items: center;
+        justify-content: none;
+    }
+
+    .soutioninnerbb {
+        text-align: center;
+    }
+
+    .soutioninnerb {
+        width: 90%;
+        margin: auto;
+    }
+
+    .soutioninner img {
+        width: 150px;
+        /* margin-top: 20px;
+        margin-bottom: 20px; */
+        margin: auto;
+        /* text-align: center; */
+    }
+
+    .soutioninnerb h2 {
+        font-size: 1rem;
+        margin-top: 20px;
+    }
+
+    .goal h2 {
+        font-size: 1rem;
+    }
+
+    .hamburger {
+        display: block;
+        position: absolute;
+        right: 0px;
+    }
+
+    .hamburger2 {
+        display: none;
+        position: absolute;
+        right: 0px;
+    }
+
+
+
+}

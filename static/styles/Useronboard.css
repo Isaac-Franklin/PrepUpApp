@@ -1,0 +1,194 @@
+/* LOGIN PAGE EDITS STARTS HERE */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0px;
+    font-family: monospace, tahoma;
+}
+
+textarea:focus,
+input:focus {
+    outline: none;
+}
+
+.loginsideimage img {
+    width: 600px;
+    margin-left: 50px;
+    height: 95vh;
+    margin-top: 0px;
+}
+
+
+
+.loginpage {
+    width: 80%;
+    margin: auto;
+
+}
+
+.loginform {
+    width: 100%;
+    height: 95vh;
+    display: flex;
+    align-items: center;
+    margin: 30px;
+    padding-left: 20px;
+    background-color: rgb(22, 24, 25);
+    justify-content: space-between;
+}
+
+.loginform form input {
+    width: 400px;
+    height: 37px;
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 10px;
+    margin-bottom: 0px;
+    border: 1px solid #FF5F52;
+    /* background-color: rgb(197, 197, 219); */
+    color: #FF5F52;
+    font-size: 1.2rem;
+}
+
+.formproper p {
+    color: #FF5F52;
+}
+
+#profilepic input {
+    border: none;
+}
+
+#profilepic {
+    background-color: white;
+    padding: 5px;
+    margin: 5px 0px;
+    width: 400px;
+    height: 70px;
+    border-radius: 10px;
+}
+
+#profilepic p {
+    color: black;
+}
+
+.loginform form h2,
+h1 {
+    margin-bottom: 10px;
+    color: white;
+}
+
+.loginform form button {
+    background-color: #FF5F52;
+    padding: 10px 10px;
+    color: white;
+    border-radius: 10px;
+    border: none;
+    font-size: 1.3rem;
+
+}
+
+.loginform form button:hover {
+    color: black;
+    cursor: pointer;
+}
+
+form p,
+a {
+    color: white;
+    margin-top: 10px;
+}
+
+
+
+/* LOGIN PAGE EDITS ENDS HERE */
+
+.loginsideimage2 {
+    display: none;
+}
+
+@media only screen and (max-width: 1230px) {
+    .loginpage {
+        width: 80%;
+        margin: auto;
+        margin-top: 50px;
+    }
+
+    .loginform form h2,
+    h1 {
+        margin-bottom: 10px;
+        color: black;
+    }
+
+    form p,
+    a {
+        color: black;
+        margin-top: 10px;
+    }
+
+    .loginsideimage2 {
+        display: block;
+    }
+
+
+    .loginsideimage2 img {
+        width: 97vw;
+        margin: auto;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .loginsideimage2 {
+        text-align: center;
+    }
+
+    .formproper {
+        margin-bottom: 30px;
+        color: black;
+    }
+
+    .loginform {
+        width: 100%;
+        /* height: 90vh; */
+        display: inline;
+        align-items: center;
+        margin: 30px;
+        padding-left: 0px;
+        /* background-color: rgb(22, 24, 25); */
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
+
+    .loginsideimage img {
+        width: 380px;
+        margin-top: 40px;
+        margin-left: 0px;
+        height: 400px;
+
+    }
+
+    .loginpage {
+        width: 100%;
+        margin: auto;
+
+    }
+
+    .loginsideimage {
+        display: none;
+    }
+
+    form {
+        text-align: center;
+    }
+
+    .loginform form input {
+        width: 300px;
+        height: 60px;
+        padding: 10px;
+        font-size: 1rem;
+        border-radius: 10px;
+        margin-bottom: 0px;
+        background-color: white;
+        color: #FF5F52;
+        font-size: 1.2rem;
+    }
+}

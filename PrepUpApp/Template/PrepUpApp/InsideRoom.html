@@ -1,0 +1,50 @@
+{% include 'General.html' %} 
+{%load static%}
+{% load embed_video_tags %}
+{% block content %}
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title> {{rooms.topic}} | PrepUp</title>
+		<link rel="stylesheet" href="{% static 'styles/insideroom.css' %}" />
+		{% comment %} <link rel="stylesheet" href="{% static 'styles/main.css' %}" /> {% endcomment %}
+	</head>
+	<body>
+        <div class= 'insidebodyarea'>
+            {% comment %} <small>Hey {{request.user}},<small><br/> {% endcomment %}
+            <div class='roomintro'>
+                <div class='topicsection'>
+                    <h1><span>{{rooms.topic}}</span></h1><br/>
+                    <a href='{{request.META.HTTP_REFERER}}'><button>Return</button></a>
+                </div>
+                <h3>{{rooms.description}}</h3>
+            </div>
+            <h2 class='conversation'>Conversations</h2>
+            {% for room_messages in room_messages %}
+            {% if request.user.username == room_messages.user %}
+            <div class='currentusermessage'>
+                <a href=/profile/{{room_messages.user}}/ ><p>@{{ room_messages.user }}</p></a>
+                {{room_messages.body}}
+            </div>
+            {% else %}
+            <div class='othermessages'>
+                <a href=/profile/{{room_messages.user}}/ ><small>@{{ room_messages.user }} </a>  said this {{ room_messages.created_at| timesince }}:</small><br/> 
+                <h3>{{room_messages.body}}</h3>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+        <div class='entermessage'>
+            <form method='POST'>
+                {% csrf_token %}
+                <input type='text' name='body' placeholder = 'Enter Your Message...' />
+                <button type='submit'>Send</button>
+            </form>
+        </div>
+        <script type="module" src= {% static 'js/responav.js' %} ></script>
+
+    </body>
+</html>
+{% endblock content %}

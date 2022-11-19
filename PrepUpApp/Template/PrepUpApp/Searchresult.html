@@ -1,0 +1,48 @@
+{% include 'General.html' %} 
+{%load static%}
+{% load embed_video_tags %}
+{% block content %}
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Search Result | PrepUp</title>
+		<link rel="stylesheet" href="{% static 'styles/main.css' %}" />
+		<link rel="stylesheet" href="{% static 'styles/search.css' %}" />
+	</head>
+	<body>
+		<div class='searchbodymain'>
+			{% for material in material %}
+			<p>A Shared Material Was Found:</p>
+				<div class='searchresult'>
+						{{ material.Title }}<br/>
+						<a href=>{{ material.Material_URL  }}</a><br/>
+				</div><br/>
+			{% endfor %}
+			<div>
+				{% for roomresult in roomresult %}
+				<p>Room Found:</p>
+					<div class='searchresult'>
+						<a href=/insideroom/{{roomresult.id}}/><p>{{roomresult.topic}}</p></a>
+						<p>{{roomresult.description}}</p>
+					</div><br/>
+			{% endfor %}
+
+			<div>
+				{% for usersearch in usersearch %}
+				<p>User Found:</p>
+				<div class='searchresult'>
+					<p>Fullname: <a href=/profile/{{usersearch.username}}/>{{usersearch.fullname}}</a></p>	
+					<p>Username: {{usersearch.username}}</p>
+					<p>Profession: {{usersearch.profession}}</p>
+				</div><br/><br/>
+				{% endfor %}
+			</div>
+			</div>
+		</div>
+		<script type="module" src= {% static 'js/responav.js' %} ></script>
+
+    </body>
+</html>
+{% endblock content %}

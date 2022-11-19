@@ -1,0 +1,17 @@
+{
+    "name": "PrepUp",
+    "short_name": "PrepUp",
+    "theme_color": "#FF5F52",
+    "background_color": "rgb(22, 24, 25)",
+    "display": "standalone",
+    "scope": "/",
+    "start_url": "",
+    "description": "A Community That Preps Job Seekers For Dream Job",
+    "orientation": "any",
+    "icons": [
+        {
+            "src": "/static/images/prepup1.png",
+            "sizes": "1024x1024"
+        }
+    ]
+}

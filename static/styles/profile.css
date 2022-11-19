@@ -1,0 +1,109 @@
+body {
+    background-color: #161819;
+}
+
+.active {
+    background-color: #FF5F52;
+    color: black;
+    cursor: pointer;
+}
+
+.respgeneral {
+    position: fixed;
+    top: 0px;
+    width: 100vw;
+    z-index: 20;
+    align-items: center;
+    text-align: center;
+    background-color: #161819;
+    height: 120px;
+    padding-top: 8px;
+    display: none;
+}
+
+.profilebodyarea {
+    background-color: black;
+    width: 80%;
+    color: white;
+    margin: auto;
+    margin-left: 18%;
+    margin-top: 70px;
+    padding: 10px;
+    border-radius: 10px;
+    z-index: 10;
+}
+
+.profileimage img {
+    width: 300px;
+    height: 200px;
+    /* margin: 20px 0px; */
+    /* border-radius: 30px; */
+    object-fit: cover;
+    object-position: center;
+}
+
+.profileimage {
+    /* text-align: center; */
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    justify-content: space-between;
+    /* background-color: red; */
+}
+
+.profileimage h2 {
+    margin: 10px
+}
+
+.details {
+    background: rgba(255, 255, 255, 0.089);
+    border-radius: 10px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5.1px);
+    -webkit-backdrop-filter: blur(5.1px);
+    padding: 10px;
+    color: white;
+    width: 70%;
+    margin: auto;
+    font-size: 0.7rem;
+    /* border-radius: 20px; */
+
+
+}
+
+.profilebodyarea button {
+    background-color: #FF5F52;
+    padding: 10px;
+    color: white;
+    border-radius: 10px;
+    border: none;
+    margin: 10px 1px;
+
+}
+
+.profilebodyarea button:hover {
+    color: black;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 1230px) {
+    .profilebodyarea {
+        display: inline;
+        width: 80%;
+        background-color: #161819;
+        margin: auto;
+
+    }
+
+
+
+    .profileimage {
+        /* text-align: center; */
+        display: inline;
+        text-align: center;
+        align-items: center;
+        padding: 10px;
+        justify-content: space-between;
+        /* background-color: red; */
+    }
+}

@@ -1,0 +1,51 @@
+body {
+    background-color: #161819;
+}
+
+span {
+    /* background-color: #FF5F52; */
+    color: #FF5F52;
+    cursor: pointer;
+}
+
+.respgeneral {
+    position: fixed;
+    top: 0px;
+    width: 100vw;
+    z-index: 20;
+    align-items: center;
+    text-align: center;
+    background-color: #161819;
+    height: 120px;
+    padding-top: 8px;
+    display: none;
+}
+
+.interviewresultbody {
+    background-color: black;
+    width: 80%;
+    color: white;
+    margin: auto;
+    margin-left: 18%;
+    margin-top: 70px;
+    padding: 10px;
+    border-radius: 10px;
+    z-index: 10;
+}
+
+@media only screen and (max-width: 730px) {
+    .interviewresultbody {
+        background-color: #161819;
+        width: 95%;
+        color: white;
+        margin: auto;
+        margin-left: 0%;
+        margin: auto;
+        margin-top: 20px;
+        /* height: 100vh; */
+        padding: 10px;
+        border-radius: 10px;
+        z-index: 10;
+    }
+
+}

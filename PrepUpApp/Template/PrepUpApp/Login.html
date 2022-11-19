@@ -1,0 +1,43 @@
+{%load static%}
+{% block content %}
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" type="image/x-icon" href={% static 'images/prepup1.png'%} >
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Login | PrepUp</title>
+		<link rel="stylesheet" href="{% static 'styles/Useronboard.css' %}" />
+	</head>
+	<body>
+        <div class='loginpage'>
+            <div class='loginform'>
+                <div class='formproper'>
+                    <form method = "POST">
+                        {% csrf_token %}
+                        <div id="flash">
+                            {% if messages %} {% for message in messages %}
+                            <div class="alert alert-{{ message.tags}} m-0" role="alert">
+                                <strong style="color: #FF5F52">{{ message }}</strong> <small> [Refresh page to remove]</small>
+                            </div>
+                            {% endfor %} {% endif %}
+                        </div>
+                        <h1>Welcome Back</h1>
+                        <div class='loginsideimage2'>
+                            <img src={% static 'images/prepuplogin.png'%} />
+                        </div>
+                        <input type='text' name="username" placeholder='Username eg: Johnny' /><br /><br /><br />
+                        <input type='password' name="password" placeholder='Password ***' /><br /><br /><br />
+                        <button type='submit' name="submit">Get In</button><br /><br />
+                        <p>Haven't Got An Account Yet? <a href='/signup'>Create One Here</a></p>
+
+                    </form>
+                </div>
+                <div class='loginsideimage'>
+                    <img src={% static 'images/prepuplogin.png'%} />
+                </div>
+            </div>
+        </div> 
+    </body>
+    </html>
+    {% endblock content %}

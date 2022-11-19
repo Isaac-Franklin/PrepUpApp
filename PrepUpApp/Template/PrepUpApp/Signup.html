@@ -1,0 +1,54 @@
+{%load static%}
+{% block content %}
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" type="image/x-icon" href={% static 'images/prepup1.png'%} >
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>SignUp | PrepUp</title>
+		<link rel="stylesheet" href="{% static 'styles/Useronboard.css' %}" />
+	</head>
+    <body>
+        <div class='loginpage'>
+            <div class='loginform'>
+                <div class='formproper'>
+                    <div class='loginsideimage2'>
+                        <img src={% static 'images/prepuplogin.png'%} />
+                    </div>
+                    <form method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div id="flash">
+                            {% if messages %} {% for message in messages %}
+                            <div class="alert alert-{{ message.tags}} m-0" role="alert">
+                                <strong style="color: red">{{ message }}</strong><small>Refresh page to remove</small>
+                            </div>
+                            {% endfor %} {% endif %}
+                        </div>
+                        <input type='text' name="fullname" placeholder='Full Name [eg: John Doe]' /><br /><br />
+                        <input type='text' name="username" placeholder='Username [eg: Johnny]' /><br /><br />
+                        <input type='text' name="profession" placeholder='Profession [eg: Full Stack Web Developer]' /><br /><br />
+                        <input type='text' name="email" placeholder='Email Address [eg: johndoe@gmail.com]' /><br /><br />
+                        <input type='link' name="link" title='Enter a link to any page that details your level of expertise. Can be your GitHub or Behance account' placeholder='Link To Portfilio [eg: prepup.com]' /><br /><br />
+                        <input type='number' name="years_of_experience" placeholder='Years Of Experience [eg: 1]' /><br /><br />
+                        <div id="profilepic">
+                            <p><strong>Select A Profile Image Below</strong></p>
+                            <input type='file' name="profileimage" title='Select A Profile Image' /><br /><br />
+                        </div>
+                        <input type='password' name="password" placeholder='Password' /><br /><br />
+                        <input type='password' name="repassword" placeholder='Retype Password' /><br /><br />
+                        <button type='submit' name="submit">Let's Get Started</button>
+                        <p>Have An Account Already? <a href='/login'>Login Here</a></p>
+
+                    </form>
+                    
+                </div>
+                <div class='loginsideimage'>
+                    <img src={% static 'images/prepuplogin.png'%} />
+                </div>
+            </div>
+        </div>
+    </body>
+    </html>
+
+    {%endblock content%}

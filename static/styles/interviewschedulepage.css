@@ -1,0 +1,166 @@
+body {
+    background-color: #161819;
+}
+
+.active {
+    background-color: #FF5F52;
+    color: black;
+    cursor: pointer;
+}
+
+.respgeneral {
+    position: fixed;
+    top: 0px;
+    width: 100vw;
+    z-index: 20;
+    align-items: center;
+    text-align: center;
+    background-color: #161819;
+    height: 120px;
+    padding-top: 8px;
+    display: none;
+}
+
+.interviewschedulebodyarea {
+    background-color: black;
+    width: 80%;
+    color: white;
+    margin: auto;
+    margin-left: 18%;
+    margin-top: 70px;
+    padding: 10px;
+    border-radius: 10px;
+    z-index: 10;
+}
+
+.suggestedinterviewers {
+    display: none;
+}
+
+.numberofcandidate {
+    text-align: center;
+    padding: 20px;
+}
+
+.numberofcandidate button {
+    background-color: #FF5F52;
+    padding: 9px 15px;
+    font-size: 1.2rem;
+    color: white;
+    border-radius: 10px;
+    width: 300px;
+    height: 50px;
+    border: none;
+    margin: 20px 1px;
+}
+
+
+.numberofcandidate button:hover {
+    color: #FF5F52;
+    background-color: black;
+    cursor: pointer;
+    border: #FF5F52 1px solid;
+}
+
+.numberofcandidate h1 {
+    margin-bottom: 20px;
+}
+
+.selectedinterviewer {
+    text-align: center;
+    display: none;
+}
+
+.selectedinterviewer button {
+    background-color: #FF5F52;
+    padding: 9px 15px;
+    font-size: 1.2rem;
+    color: white;
+    border-radius: 10px;
+    border: none;
+    margin: 20px 1px;
+}
+
+.line {
+    width: 100%;
+    height: 2px;
+    background-color: white;
+    border-radius: 30px;
+    margin: 10px auto;
+
+}
+
+
+.selectedinterviewer button:hover {
+    color: #FF5F52;
+    background-color: black;
+    cursor: pointer;
+    border: #FF5F52 1px solid;
+}
+
+.selectedinterviewerproper a strong {
+    color: blue;
+    text-decoration: none;
+}
+
+.selectedinterviewerproper a {
+    text-decoration: none;
+}
+
+
+.loader img {
+    height: 6.5rem;
+    width: 6.5rem;
+    /* margin-top: 80px; */
+    margin: auto;
+    transform-origin: 44% 50%;
+    animation: rotate 1.5s infinite linear;
+    z-index: 12;
+}
+
+.selectedinterviewerproper form {
+    /* background-color: red; */
+    height: 100px;
+    width: 400px;
+    text-align: center;
+    margin: auto;
+}
+
+
+
+.selectedinterviewerproper form input {
+    width: 380px;
+    background-color: white;
+    color: black;
+    margin: 0px;
+    padding: 10;
+    position: relative;
+
+}
+
+/* .inputsec {
+    margin: auto
+}*/
+
+.acceptDisplay {
+    display: none;
+    text-align: center;
+}
+
+@media only screen and (max-width: 1230px) {}
+
+@media only screen and (max-width: 730px) {
+    .interviewschedulebodyarea {
+        background-color: #161819;
+        width: 95%;
+        color: white;
+        margin: auto;
+        margin-left: 0%;
+        margin: auto;
+        margin-top: 20px;
+        /* height: 100vh; */
+        padding: 10px;
+        border-radius: 10px;
+        z-index: 10;
+    }
+}

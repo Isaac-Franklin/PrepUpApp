@@ -1,0 +1,36 @@
+{% extends 'general.html' %}
+
+{%load static%}
+{% load embed_video_tags %}
+{% block content %}
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Success Testimonials | PrepUp</title>
+		<link rel="stylesheet" href="{% static 'styles/main.css' %}" />
+		<link rel="stylesheet" href="{% static 'styles/successstory.css' %}" />
+	</head>
+	<body>
+        <div class='successstoryarea'>
+            <h1>{{request.user.username}}, Share Your Success Story</h1>
+			<p>One important reason we allow the sharing of this story is to keep the community motivated, and inspire those who are working ard to get to where you are now.</p>
+			<p>NOTE: You can make a video of yourself telling the community about your transition to success, and enter a link to the video in the appropriate input section below.</p>
+			<form method='POST'>
+				{% csrf_token %}
+				<label>Tell Us Your Story...</label><br/>
+				<textarea type ='text' name='testimony' placeholder='Tell you success story...'></textarea><br/><br/>
+				<label>Enter a link to your external video where you tell your story...</label><br/>
+				<input class='form' type='url' name='videolink' placeholder ='Enter a link to an external video where you tell you story...'/><br/><br/>
+				<button type='submit' value='submit'>Share</button>
+			</form>
+			
+			<span>Thank you for sharing</span>
+        </div>
+		<script type="module" src= {% static 'js/responav.js' %} ></script>
+
+    </body>
+</html>
+
+{% endblock content %}

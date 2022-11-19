@@ -1,0 +1,49 @@
+{% include 'General.html' %} 
+{%load static%}
+{% load embed_video_tags %}
+{% block content %}
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Rooms Page | PrepUp</title>
+		<link rel="stylesheet" href="{% static 'styles/rooms.css' %}" />
+		{% comment %} <link rel="stylesheet" href="{% static 'styles/main.css' %}" /> {% endcomment %}
+	</head>
+	<body>
+        <div class='roomsbodyarea'>
+            <div class='introheader'>
+				<h1>Rooms Page</h1>
+				<a href={% url 'Createarooms' %}><button>Create A Room</button></a>
+			</div>
+			<div id="flash">
+				{% if messages %} {% for message in messages %}
+				<div class="alert alert-{{ message.tags}} m-0" role="alert">
+					<strong style="color: red">{{ message }}</strong>
+				</div>
+				{% endfor %} {% endif %}
+			</div>
+			<span>{{rooms.count}} Rooms Available</span>
+			{% for room in rooms %}
+			
+			<div class='roomproper'>
+				<h2>Topic: <a href=/insideroom/{{room.id}}/>{{ room.topic }}</a></h2>
+				<h2>Description: {{ room.description }}</h2>
+				<p>Created by <a href=/profile/{{ room.host }}/> @{{ room.host }}</a></p>
+				<div>
+					<small>Created {{ room.created_at | timesince }}</small> |
+					{% if request.user == room.host %}
+					<a href=/deleteroom/{{room.id}}/><small>Delete Room</small></a>
+					{% endif %}
+				</div>
+				
+				<div class='line'></div>
+			</div>
+			{% endfor %}
+        </div>
+		<script type="module" src= {% static 'js/responav.js' %} ></script>
+
+    </body>
+</html>
+{% endblock content %}

@@ -1,0 +1,52 @@
+{% extends 'general.html' %}
+{%load static%}
+{% load embed_video_tags %}
+{% block content %}
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>All Suggested Material | PrepUp</title>
+		<link rel="stylesheet" href="{% static 'styles/main.css' %}" />
+		<link rel="stylesheet" href="{% static 'styles/suggestionsList.css' %}" />
+	</head>
+	<body>
+		<div class='allsuggestionsbodyarea'>
+			<div class="suggestintro">
+				<h1>All Suggested Materials</h1>
+				<a href= 'uploadmaterial'><button>Upload A Material</button></a>
+			</div>
+			<div id="flash">
+				{% if messages %} {% for message in messages %}
+				<div class="alert alert-{{ message.tags}} m-0" role="alert">
+					<strong style="color: #FF5F52">{{ message }}</strong> <small> [Refresh page to remove]</small>
+				</div>
+				{% endfor %} {% endif %}
+			</div>
+			
+			{% for allmaterials in allmaterials %}
+			<div class='materialdetails'>
+				<p>Uploaded By: <a href=/profile/{{ allmaterials.user }}/>@{{ allmaterials.user }}</p></a>
+				<p>This Material Is A: {{ allmaterials.Material_type }}</p>
+				<p>Title: {{ allmaterials.Title }}</p>
+				<p>Description: {{ allmaterials.Description }}</p>
+				<p>This Material Is Recommended For: {{ allmaterials.Meant_for }}</p>
+				<p>Benefits Of This Material: {{ allmaterials.benefits_of_use }}</p>
+				
+				{% if allmaterials.Material_URL %}
+				<p>Material URL: <a href={{ allmaterials.Material_URL }} target="_blank">{{ allmaterials.Material_URL }}</a></p>
+					{% else %}
+					<p>{{ allmaterials.Upload_material }}</p>
+				{% endif %}
+				<p>Created {{ allmaterials.created_at | timesince }} ago </p>				
+			</div>
+			<div class='line'></div>
+
+			{% endfor %}
+		</div>
+		<script type="module" src= {% static 'js/responav.js' %} ></script>
+
+    </body>
+</html>
+{% endblock content %}
