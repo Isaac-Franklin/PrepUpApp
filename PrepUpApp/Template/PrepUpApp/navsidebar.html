@@ -1,0 +1,192 @@
+{% load static %} {% block content %}
+
+<body>
+    {% comment %} RESPO NAV SECTION STARTS HERE {% endcomment %}
+    <div>
+        <div onClick={showMenuBar()} class='openmenubtn'>
+            <img src={% static 'images/opennav.png' %} />
+        </div>
+        <div class='respgeneral'>
+            <div onClick={hideMenuBar()} class='closemenubtn'>
+                <img src={% static 'images/closenav.png' %} />
+            </div>
+            <div class='responavtop'>
+                <div class='nameintroresp'>
+                    <p>PrepUp</p>
+                    <h3> {% if user.is_authenticated %}
+                        <h2>Hello {{user.username}},
+                    </h3>
+                    {% endif %}
+                </div>
+                <div class='respnavsearch'>
+                    <div class='searchBar'>
+                        <form method='GET' action="{% url 'Searchresult' %}">
+                            <input type='text' name='q' placeholder='Search' />
+                        </form>
+                        <img src={% static 'images/search.png' %} alt="search bar" />
+                    </div>
+                    <div class='notificationsettings'>
+
+                        <div>
+                            <img src={% static 'images/notify.png' %} alt="Notification" />
+                            <img src={% static 'images/settings.png' %} alt="Settings" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class='sidebar'>
+                    <div>
+                        <div>
+                            <ul>
+                                <a href='/dashboard'>
+                                    <li class='dashboardbtn'>
+                                        <img src={% static 'images/dashboard.png' %} />
+                                        <p>Dashboard</p>
+                                    </li>
+                                </a>
+                                <a href='/profile/{{user.username}}/'>
+                                    <li class='profilebtn'>
+                                        <img src={% static 'images/profile.png' %} />
+                                        <p>Profile</p>
+                                    </li>
+                                </a>
+                                <a href='/interviewschedule'>
+                                    <li class='interviewschedulebtn'>
+                                        <img src={% static 'images/play.png' %} />
+                                        <p>Interview Schedule</p>
+                                    </li>
+                                </a>
+                                <a href='/suggestamaterial'>
+                                    <li class='materialsbtn'>
+                                        <img src={% static 'images/materials.png' %} />
+                                        <p>Materials</p>
+                                    </li>
+                                </a>
+                                <a href='/rooms'>
+                                    <li class='roomsbtn'>
+                                        <img src={% static 'images/team.png' %} />
+                                        <p>Rooms</p>
+                                    </li>
+                                </a>
+                                <a href='/interviewresult'>
+                                    <li class='interviewscore'>
+                                        <img src={% static 'images/videocall.png' %} />
+                                        <p>Interview Score</p>
+                                    </li>
+                                </a>
+                            </ul>
+                        </div>
+                        <div>
+                            <ul>
+                                <a href={% url 'Logout' %}>
+                                    <li>
+                                        <img src={% static 'images/exit.png' %} />
+                                        <p>Exit</p>
+                                    </li>
+                                </a>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% comment %} RESPO NAV SECTION ENDS HERE {% endcomment %}
+
+
+    {% comment %} nav bar area starts here {% endcomment %}
+    <div class='nav'>
+        <div class='nav1'>
+            <div class='logoname'>
+                <h2>PrepUp</h2>
+            </div>
+            <div class='welcomenote'>
+                {% if user.is_authenticated %}
+                <h2>Hello {{user.username}},
+                    {% endif %}
+                </h2>
+            </div>
+        </div>
+        <div class='nav2'>
+            <div class='searchBar'>
+                <form method='GET' action="{% url 'Searchresult' %}">
+                    <input type='text' name='q' placeholder='Search' />
+                </form>
+                <img src={% static 'images/search.png' %} alt="search bar" />
+            </div>
+            <div class='notificationsettings'>
+                <div>
+                    <img src={% static 'images/notify.png' %} alt="Notification" />
+                    <img src={% static 'images/settings.png' %} alt="Settings" />
+                </div>
+            </div>
+        </div>
+
+    </div>
+    {% comment %} nav bar area ends here {% endcomment %}
+    {% comment %} SIDEBAR START HERE {% endcomment %}
+    <div class='sideoutter'>
+        <div class='sidebar'>
+            <div>
+                <div>
+                    <ul>
+                        <a href='/dashboard' class='dashboardbtn'>
+                            <li>
+                                <img src={% static 'images/dashboard.png' %} />
+                                <p>Dashboard</p>
+                            </li>
+                        </a>
+                        <a href='/profile/{{user.username}}/'>
+                            <li class='profilebtn'>
+                                <img src={% static 'images/profile.png' %} />
+                                <p>Profile</p>
+                            </li>
+                        </a>
+                        <a href='/interviewschedule'>
+                            <li class='interviewschedulebtn'>
+                                <img src={% static 'images/play.png' %} />
+                                <p>Interview Schedule</p>
+                            </li>
+                        </a>
+                        <a href='/suggestamaterial'>
+                            <li class='materialsbtn'>
+                                <img src={% static 'images/materials.png' %} />
+                                <p>Materials</p>
+                            </li>
+                        </a>
+                        <a href='/rooms'>
+                            <li class='roomsbtn'>
+                                <img src={% static 'images/team.png' %} />
+                                <p>Rooms</p>
+                            </li>
+                        </a>
+                        <a href='/interviewresult'>
+                            <li class='interviewscore'>
+                                <img src={% static 'images/videocall.png' %} />
+                                <p>Interview Score</p>
+                            </li>
+                        </a>
+                    </ul>
+                </div>
+                <div>
+                    <ul>
+                        <a href={% url 'Logout' %}>
+                            <li>
+                                <img src={% static 'images/exit.png' %} />
+                                <p>Exit</p>
+                            </li>
+                        </a>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    {% comment %} SIDEBAR ENDS HERE {% endcomment %}
+
+    <script type="module" src={% static 'js/navbar.js' %}></script>
+</body>
+
+</html>
+{% endblock content %}
