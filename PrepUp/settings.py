@@ -24,15 +24,16 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+SECRET_KEY = 'django-insecure-egsyyrs)#o@z0&d44p8kias-2qo#^8rd0@2^h83&vh8@+6m1ai'
 
 # DEBUG = os.getenv("DEBUG", "False") == "True"
 
 
 # from .env import SECRET_KEY
 
-from django.core.management.utils import get_random_secret_key
+# from django.core.management.utils import get_random_secret_key
 
-SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", get_random_secret_key())
+# SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", get_random_secret_key())
 
 ALLOWED_HOSTS = ['*']
 
