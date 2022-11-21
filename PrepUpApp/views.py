@@ -73,7 +73,7 @@ def SignUp(request):
             login(request, user)
             user.save()
             form.save()
-            return redirect('Signup')
+            return redirect('Loginpage')
             messages.success(request, 'Registration Successful')
         # messages.success(request, 'Registration Failed')
     return render(request, 'PrepUpApp/Signup.html')

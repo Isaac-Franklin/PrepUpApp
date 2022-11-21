@@ -46,7 +46,7 @@ input:focus {
     margin-bottom: 0px;
     border: 1px solid #FF5F52;
     /* background-color: rgb(197, 197, 219); */
-    color: #FF5F52;
+    /* color: #FF5F52; */
     font-size: 1.2rem;
 }
 

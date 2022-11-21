@@ -154,11 +154,11 @@
                                 <p>Dashboard</p>
                             </li>
                         </a>
-                        <a href=/profile/{{user.username}} />
-                        <li class='profilebtn'>
-                            <img src={% static 'images/profile.png' %} />
-                            <p>Profile</p>
-                        </li>
+                        <a href='/profile/{{user.username}}/'>
+                            <li class='profilebtn'>
+                                <img src={% static 'images/profile.png' %} />
+                                <p>Profile</p>
+                            </li>
                         </a>
                         <a href='/interviewschedule'>
                             <li class='interviewschedulebtn'>
@@ -210,7 +210,7 @@
                     {{user.username}}, You Are Yet To Be Matched For A<br /> Mock Interview</h2>
                 {% endif %}
 
-                <a href={% url 'Uploadmaterial' %}><button>Match Me!</button></a>
+                <a href={% url 'InterviewSchedule' %}><button>Match Me!</button></a>
             </div>
             <div class='dashboardTagsOutter'>
                 <div class='dashboardTagsInner'>
@@ -282,7 +282,7 @@
                 <h2>Suggested Study Materials</h2>
                 {% for suggestors in suggestors %}
                 <p class='user'>
-                    <a href=/profile/{{ suggestors.user }} />@{{ suggestors.user }}</a> Suggested a Material
+                    <a href="/profile/{{ suggestors.user }}/">@{{ suggestors.user }}</a> Suggested a Material
                 </p>
                 {% endfor %}
                 <a href='suggestamaterial'><button>See Materials</button></a>

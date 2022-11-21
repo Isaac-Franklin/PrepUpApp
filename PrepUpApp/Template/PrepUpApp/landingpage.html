@@ -2,150 +2,196 @@
 {% load embed_video_tags %}
 {% block content %}
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<link rel="icon" type="image/x-icon" href={% static 'images/prepup1.png'%} >
-		{% comment %} FONT INTEGRATION HERE {% endcomment %}
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="manifest" href="/static/manifest.json">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600&display=swap" rel="stylesheet">
-		{% comment %} FONT INTEGRATION HERE {% endcomment %}
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
-		<title>PrepUp | Get Started </title>
-		<link rel="stylesheet" href="{% static 'styles/Landingpage.css' %}" />
-	</head>
-	<body>
-		<nav>
+
+<head>
+	<meta charset="UTF-8" />
+	<link rel="icon" type="image/x-icon" href={% static 'images/prepup1.png' %}>
+	{% comment %} FONT INTEGRATION HERE {% endcomment %}
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="manifest" href="/static/manifest.json">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600&display=swap" rel="stylesheet">
+	{% comment %} FONT INTEGRATION HERE {% endcomment %}
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>PrepUp | Get Started </title>
+	<link rel="stylesheet" href="{% static 'styles/Landingpage.css' %}" />
+</head>
+
+<body>
+	<nav>
+		<div>
+			<img src={% static 'images/prepup1.png' %} />
+		</div>
+		<div>
+			<ul>
+				<a href={% url 'Signup' %}>
+					<li>Get Started</li>
+				</a>
+				<a href='#problemStatement'>
+					<li>Problem Statement</li>
+				</a>
+				<a href='#solutionsproposed'>
+					<li>Solutions</li>
+				</a>
+			</ul>
+		</div>
+		<div class='navbtns'>
+			<a href={% url 'Loginpage' %}><button>Login</button></a>
+			<a href={% url 'Signup' %}><button>SignUp</button></a>
+		</div>
+		<div class='hamburger'>
+			<img src={% static 'images/opennav.png' %} />
+		</div>
+		<div class='hamburger2'>
+			<img src={% static 'images/closenav.png' %} />
+		</div>
+	</nav>
+	<div class="productionnotice">
+		<p>
+			Hello, Please this landing page is basically for production purposes as our proper deployment page is still
+			in progress and will be deployed in due time.
+		</p>
+	</div>
+
+	<div class="responsivenav">
+		<div>
+			<ul>
+				<a href={% url 'Signup' %}>
+					<li>Get Started</li>
+				</a>
+				<a href='#problemStatement'>
+					<li>Problem Statement</li>
+				</a>
+				<a href='#solutionsproposed'>
+					<li>Solutions</li>
+				</a>
+			</ul>
+		</div>
+		<div class='navbtnss'>
+			<a href{% url 'Loginpage' %}><button>Login</button></a>
+			<a href={% url 'Signup' %}><button>SignUp</button></a>
+		</div>
+	</div>
+	<div class='hero'>
+		<div class='heroinner'>
+			<h3>
+				Tried Multiple Times To Get That Job To No Avail?
+			</h3>
+			<h1>
+				Why Not Join A Community That Works You Towards Getting Your Dream Job
+			</h1>
+			<a href={% url 'Signup' %}><button>Get Started Today</button></a>
+		</div>
+	</div>
+
+	{% comment %} BELOW HERO SECTION {% endcomment %}
+
+	<div class="section2">
+		<h2 id='problemStatement'>The Problem Statement</h2>
+		<div class='section2inner'>
+			{% comment %} <img src={% static 'images/angryworker.png' %} /> {% endcomment %}
+			<h1 class='probstmt'>
+				Today, the market operates in a way that the employers have to put up a job opening and within a time
+				interval, the employer is able to take in as much applications as possible for the job opening.
+				This can result in as much as hundreds and even thousands of application for a single or multiply job
+				openings.
+				After applications are taken and application submission is closed, the employer or recruiter has to take
+				out time to click through each and every submitted application. This is done for as long as it takes
+				till a good fit for the job is
+				found and if no good fit is found, the employer will have to keep up with the search.
+				Now, say one out of a hundred applicants in selected, the employer has to write back to other ninty nine
+				applicants with a response <span>saying they have been rejected.</span>
+				Now there's a chance that a certian percentage of the ninety nine failed applicants might loose hope and
+				start considering other means of livelihood, while the rest have to apply for the next opening they can
+				find and
+				wait to see if they get lucky this time.
+			</h1>
+		</div>
+		<div class='listofreasons'>
 			<div>
-				<img src = {% static 'images/prepup1.png'%} />
+				<img src={% static 'images/angryworker.png' %} />
 			</div>
-			<div>
+			<div class='listofreasonsb'>
+				<h1>There's a number of disadvantages that go along with this tradition method of employee and talent
+					acquisition:</h1><br />
 				<ul>
-					<a href={% url 'Signup' %}><li>Get Started</li></a>
-					<a href='#problemStatement'><li>Problem Statement</li></a>
-					<a href='#solutionsproposed'><li>Solutions</li></a>
+					<li>The recruiter has to devote time, effort and resources to gather applications and go through
+						this applications</li>
+					<li>The talent looking to be employed might just get discouraged by the rejection recieved from the
+						intended employer</li>
+					<li>If this talent decides to remain consistent job seeking, he/she might keep studying using the
+						same method as before without any real time metric or community giving a laid out path way
+						towards getting better at the skill</li>
+					<li>Etc</li>
 				</ul>
 			</div>
-			<div class='navbtns'>
-				<a href= {% url 'Loginpage' %}><button>Login</button></a>
-				<a href={% url 'Signup' %}><button>SignUp</button></a>
-			</div>
-			<div class='hamburger'>
-				<img src = {% static 'images/opennav.png'%}/>
-			</div>
-			<div class='hamburger2'>
-				<img src = {% static 'images/closenav.png'%}/>
-			</div>
-		</nav>
-
-		<div class="responsivenav">
-			<div>
-				<ul>
-					<a href={% url 'Signup' %}><li>Get Started</li></a>
-					<a href='#problemStatement'><li>Problem Statement</li></a>
-					<a href='#solutionsproposed'><li>Solutions</li></a>
-				</ul>
-			</div>
-			<div class='navbtnss'>
-				<a href{% url 'Loginpage' %}><button>Login</button></a>
-				<a href={% url 'Signup' %}><button>SignUp</button></a>
-			</div>
 		</div>
-		<div class='hero'>
-			<div class='heroinner'>
-				<h3>
-					Tried Multiple Times To Get That Job To No Avail?
-				</h3>
-				<h1>
-					Why Not Join A Community That Works You Towards Getting Your Dream Job
-				</h1>
-				<a href= {% url 'Signup' %} ><button>Get Started Today</button></a>
-			</div>
-		</div>
-
-		{% comment %} BELOW HERO SECTION {% endcomment %}
-
-		<div class="section2">
-			<h2 id= 'problemStatement'>The Problem Statement</h2>
-			<div class='section2inner'>
-				{% comment %} <img src=  {% static 'images/angryworker.png'%} /> {% endcomment %}
-				<h1 class='probstmt'>
-					Today, the market operates in a way that the employers have to put up a job opening and within a time interval, the employer is able to take in as much applications as possible for the job opening.
-					This can result in as much as hundreds and even thousands of application for a single or multiply job openings. 
-					After applications are taken and application submission is closed, the employer or recruiter has to take out time to click through each and every submitted application. This is done for as long as it takes till a good fit for the job is
-					found and if no good fit is found, the employer will have to keep up with the search. 
-					Now, say one out of a hundred applicants in selected, the employer has to write back to other ninty nine applicants with a response <span>saying they have been rejected.</span>
-					Now there's a chance that a certian percentage of the ninety nine failed applicants might loose hope and start considering other means of livelihood, while the rest have to apply for the next opening they can find and 
-					wait to see if they get lucky this time. 
-				</h1>
-			</div>
-			<div class='listofreasons'>
-				<div>
-					<img src =  {% static 'images/angryworker.png'%} />
+		<div class='solution'>
+			<h2 id='solutionsproposed'>Our Solution</h2>
+			<h1>Prep Up</h1>
+			<div class='soutioninner'>
+				<div class='soutioninnerbb'>
+					<img src={% static 'images/prepup1.png' %} />
 				</div>
-				<div class='listofreasonsb'>
-					<h1>There's a number of disadvantages that go along with this tradition method of employee and talent acquisition:</h1><br/>
+				<div class='soutioninnerb'>
+					<h2>Prep Up is a microservice platform that builds a community of job seekers who share a common
+						goal of preparing in a more practical and proven way, for any form of job interview</h2>
+					<p>
+						Here's a list of problems that <span>Prep Up</span> offers solution to:
+					</p>
 					<ul>
-						<li>The recruiter has to devote time, effort and resources to gather applications and go through this applications</li>
-						<li>The talent looking to be employed might just get discouraged by the rejection recieved from the intended employer</li>
-						<li>If this talent decides to remain consistent job seeking, he/she might keep studying using the same method as before without any real time metric or community giving a laid out path way towards getting better at the skill</li>
-						<li>Etc</li>
+						<li>Prep Up provides a <span>mock interview</span> exercise for job seekers to help them prepare
+							better for a proper interview</li>
+						<li>PrepUp has a built in functionality that provides real-time job opening updates for
+							non-remote and remote roles and allows users to apply of each job role with the click of a
+							button</li>
+						<li>The interviewer is autogenerated by the PrepUp software and after eack interview, the
+							candidate is updated on where to focus on in his or her study</li>
+						<li>Prep up builds a community of talents who are actively working and preparing for a Job
+							opportunity</li>
+						<li>Now employers have a platform that allows them to find proven talents who have been vetted
+							by the Prep Up system to be ready for the job by glancing through the featured profiles or
+							performing an easy search for any field of choice and seeing a list of talents ready for the
+							job </li>
+						<li>Prep Up provides a system that checkmates the readiness of job seekers, gives access to
+							recommended materials and resources to help them prepare better for an interview</li>
+						<li>Prep Up as a feature that display success stories of mebmbers iof the community who just got
+							a job and by this means, moralize other community members.</li>
 					</ul>
 				</div>
 			</div>
-			<div class='solution'>
-				<h2 id ='solutionsproposed'>Our Solution</h2>
-				<h1>Prep Up</h1>
-				<div class='soutioninner'>
-					<div class='soutioninnerbb'>
-						<img src = {% static 'images/prepup1.png'%} />
-					</div>
-					<div class = 'soutioninnerb'>
-						<h2>Prep Up is a microservice platform that builds a community of job seekers who share a common goal of preparing in a more practical and proven way, for any form of job interview</h2>
-						<p>
-							Here's a list of problems that <span>Prep Up</span> offers solution to: 
-						</p>
-						<ul>
-							<li>Prep Up provides a <span>mock interview</span> exercise for job seekers to help them prepare better for a proper interview</li>
-							<li>PrepUp has a built in functionality that provides real-time job opening updates for non-remote and remote roles and allows users to apply of each job role with the click of a button</li>
-							<li>The interviewer is autogenerated by the PrepUp software and after eack interview, the candidate is updated on where to focus on in his or her study</li>
-							<li>Prep up builds a community of talents who are actively working and preparing for a Job opportunity</li>
-							<li>Now employers have a platform that allows them to find proven talents who have been vetted by the Prep Up system to be ready for the job by glancing through the featured profiles or performing an easy search for any field of choice and seeing a list of talents ready for the job </li>
-							<li>Prep Up provides a system that checkmates the readiness of job seekers, gives access to recommended materials and resources to help them prepare better for an interview</li>
-							<li>Prep Up as a feature that display success stories of mebmbers iof the community who just got a job and by this means, moralize other community members.</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-			<div class='getstartedbtn'>
-				<a href={% url 'Signup' %}><button>Click Here To Join The Community</button></a>
-			</div>
-			<div class= 'goal'>
-				<h1>Our Goal/Vision</h1>
-				<h2>
-					Our Goal at PrepUp is to build a world wide inducted community of PrepUp alumni who would have scaled through the platform to gaining their dream jobs and building a professional life as they always worked for from the start.
-				</h2>
-			</div>
-			<div class='footer'>
-				<div>
-					<div class='navbtns'>
-						<a href= {% url 'Loginpage' %}><button>Login</button></a>
-						<a href={% url 'Signup' %}><button>SignUp</button></a>
-					</div>
-				</div>
-				<div>Developer : <a href ='https://github.com/Isaac-Franklin' target= '_blank'>Isaac Franklin</a> </div>
-			</div>
 		</div>
-		<script type="module" src= {% static 'js/landingpage.js' %} ></script>
-		<script>
-			if (!navigator.serviceWorker.controller) {
-				navigator.serviceWorker.register(src= static 'js/sw.js').then(function(reg) {
-					console.log("Service worker has been registered for scope: " + reg.scope);
-				});
-			}
-		   </script>
-	</body>
-    </html>
-    {% endblock content %}
+		<div class='getstartedbtn'>
+			<a href={% url 'Signup' %}><button>Click Here To Join The Community</button></a>
+		</div>
+		<div class='goal'>
+			<h1>Our Goal/Vision</h1>
+			<h2>
+				Our Goal at PrepUp is to build a world wide inducted community of PrepUp alumni who would have scaled
+				through the platform to gaining their dream jobs and building a professional life as they always worked
+				for from the start.
+			</h2>
+		</div>
+		<div class='footer'>
+			<div>
+				<div class='navbtns'>
+					<a href={% url 'Loginpage' %}><button>Login</button></a>
+					<a href={% url 'Signup' %}><button>SignUp</button></a>
+				</div>
+			</div>
+			<div>Developer : <a href='https://github.com/Isaac-Franklin' target='_blank'>Isaac Franklin</a> </div>
+		</div>
+	</div>
+	<script type="module" src={% static 'js/landingpage.js' %}></script>
+	<script>
+		if (!navigator.serviceWorker.controller) {
+			navigator.serviceWorker.register(src = " static 'js/sw.js'").then(function (reg) {
+				console.log("Service worker has been registered for scope: " + reg.scope);
+			});
+		}
+	</script>
+</body>
+
+</html>
+{% endblock content %}
